@@ -1,6 +1,7 @@
 import CSVReader from "../components/CSVReader";
 import Collection from "../components/Collection";
-import { getProducts } from "../../services/productServices";
+import { deleteProducts, getProducts } from "../../services/productServices";
+import Button from "@/components/Button";
 
 export default async function Home() {
   const products = await getProducts()
@@ -13,6 +14,7 @@ export default async function Home() {
         <span>Welcome Home</span>
       </div>
       <div>
+        <Button />
         <CSVReader />
         {/* <button onClick={await getProducts()}>Load Items</button> */}
       </div>
