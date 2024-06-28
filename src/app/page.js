@@ -4,9 +4,9 @@ import { deleteProducts, getProducts } from "../../services/productServices";
 import Button from "@/components/Button";
 
 export default async function Home() {
-  const products = await getProducts()
+  // const products = await getProducts()
 
-  console.log(products)
+  // console.log(products)
 
   return (
     <main>
@@ -14,11 +14,11 @@ export default async function Home() {
         <span>Welcome Home</span>
       </div>
       <div>
-        <Button />
-        <CSVReader />
+        {/* <Button /> */}
+        {/* <CSVReader /> */}
         {/* <button onClick={await getProducts()}>Load Items</button> */}
       </div>
-      <Collection products={products}/>
+      {/* <Collection products={products}/> */}
     </main>
   );
 }
