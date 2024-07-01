@@ -1,7 +1,7 @@
 "use client"
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { formatNumberWithCommas } from "../../../lib/hooks";
+import { adjustPrice, formatNumberWithCommas } from "../../../lib/hooks";
 
 export default function Collection({}){
     const [data, setData] = useState([]);
@@ -155,7 +155,7 @@ export default function Collection({}){
                     <td className="styled-cell">{item['Screws']}</td>
 
                     <td className="styled-cell">{item['Year']}</td>
-                    <td className="styled-cell">${formatNumberWithCommas(item['Selling Price'])}</td>
+                    <td className="styled-cell">${formatNumberWithCommas(adjustPrice(item))}</td>
                     {/* <td className="styled-cell">{item.status='true'? 'Available' : 'Sold'}</td> */}
                     <td className="styled-cell">
                         <a>Click for Images</a> <br/>
