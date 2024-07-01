@@ -47,6 +47,7 @@ export default function Collection({products}){
                         <th className={"styled-cell"}>Brand</th>
                         <th className={"styled-cell"}>Model</th>
                         <th className={"styled-cell"}>Size / P. Line</th>
+                        <th className={"styled-cell"}>Plain / Diamond</th>
                         <th className={"styled-cell"}>Serial No.</th>
                         <th className={"styled-cell"}>Bezel</th>
                         <th className={"styled-cell"}>Case</th>
