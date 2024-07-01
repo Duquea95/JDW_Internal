@@ -41,37 +41,37 @@ export default function Collection({products}){
         <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
 
         <ul>
-            <div> {data.map((item, index) => (
+            <tabl> {data.map((item, index) => (
                 // <li key={index}>{JSON.stringify(item)}</li>    
-                <div key={`${item['Stock #']}__tableRow`}>
-                    <div className="styled-cell">
+                <tr key={`${item['Stock #']}__tableRow`}>
+                    <td className="styled-cell">
                         {/* <Image src={splitAfterDotCom(item['Image'])} width={50} height={50} /> */}
                         <Image src={item['Image']} width={150} height={50} />
-                    </div>
-                    <div className="styled-cell">{item['Stock #']}</div>
-                    <div className="styled-cell">{item['Brand']}</div>
-                    <div className="styled-cell">{item['Model']}</div>
-                    <div className="styled-cell">{item['Size/P. Line']}</div>
-                    <div className="styled-cell">{item['Plain / Dia.']}</div>
-                    <div className="styled-cell">{item['Serial No.']}</div>
-                    <div className="styled-cell">{item['Bezel']}</div>
-                    <div className="styled-cell">{item['Case']}</div>
-                    <div className="styled-cell">{item['Dial']}</div>
-                    <div className="styled-cell">{item['Strap/Bracelet']}</div>
-                    <div className="styled-cell">{item['Diamond']}</div>
-                    <div className="styled-cell">{item['Metal type']}</div>
-                    <div className="styled-cell">{item['Box/Papers']} / {item['Card']}</div>
-                    <div className="styled-cell">{item['Screws']}</div>
+                    </td>
+                    <td className="styled-cell">{item['Stock #']}</td>
+                    <td className="styled-cell">{item['Brand']}</td>
+                    <td className="styled-cell">{item['Model']}</td>
+                    <td className="styled-cell">{item['Size/P. Line']}</td>
+                    <td className="styled-cell">{item['Plain / Dia.']}</td>
+                    <td className="styled-cell">{item['Serial No.']}</td>
+                    <td className="styled-cell">{item['Bezel']}</td>
+                    <td className="styled-cell">{item['Case']}</td>
+                    <td className="styled-cell">{item['Dial']}</td>
+                    <td className="styled-cell">{item['Strap/Bracelet']}</td>
+                    <td className="styled-cell">{item['Diamond']}</td>
+                    <td className="styled-cell">{item['Metal type']}</td>
+                    <td className="styled-cell">{item['Box/Papers']} / {item['Card']}</td>
+                    <td className="styled-cell">{item['Screws']}</td>
 
-                    <div className="styled-cell">{item['Year']}</div>
-                    <div className="styled-cell">${item['Selling Price']}</div>
-                    <div className="styled-cell">{item.status='true'? 'Available' : 'Sold'}</div>
-                    <div className="styled-cell">
+                    <td className="styled-cell">{item['Year']}</td>
+                    <td className="styled-cell">${item['Selling Price']}</td>
+                    <td className="styled-cell">{item.status='true'? 'Available' : 'Sold'}</td>
+                    <td className="styled-cell">
                         <a>Click for Images</a> <br/>
                         <a>Click for Videos</a>
-                    </div>
-                </div>
-            ))}</div>
+                    </td>
+                </tr>
+            ))}</tabl>
             </ul>
         </div>
     </div>        
