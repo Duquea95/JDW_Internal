@@ -49,11 +49,6 @@ body {
   text-decoration: underline;
 }
 
-th.styled-cell{
-  background-color: #00ffff;
-  border: 1px solid black;
-}
-
 .styled-cell{
   /* display: inline;
   min-width: 125px;
@@ -61,6 +56,11 @@ th.styled-cell{
   padding: 0 5px;
   max-height: 150px;
   max-width: 150px;
+  border: 1px solid black;
+}
+th.styled-cell{
+  background-color: #00ffff;
+  border-bottom: none;
 }
 
 @layer utilities {
