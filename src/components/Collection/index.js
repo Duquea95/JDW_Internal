@@ -4,7 +4,7 @@ import { getProducts } from "../../../services/productServices";
 import Image from "next/image";
 import { formatNumberWithCommas } from "../../../lib/hooks";
 
-export default function Collection({products}){
+export default function Collection({}){
     const [data, setData] = useState([]);
     const [error, setError] = useState(null);
 
@@ -29,12 +29,6 @@ export default function Collection({products}){
         return <div>Error: {error}</div>;
     }
 
-    // function splitAfterDotCom(url) {
-    //     const splitString = '.com';
-    //     const index = url.indexOf(splitString) + splitString.length;
-    //     const partAfterDotCom = url.substring(index);
-    //     return partAfterDotCom;
-    // }
     console.log(data)
 
     return(
