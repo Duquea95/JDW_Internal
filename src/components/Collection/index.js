@@ -28,7 +28,12 @@ export default function Collection({products}){
         return <div>Error: {error}</div>;
     }
 
-    console.log(data)
+    function splitAfterDotCom(url) {
+        const splitString = '.com';
+        const index = url.indexOf(splitString) + splitString.length;
+        const partAfterDotCom = url.substring(index);
+        return partAfterDotCom;
+    }
 
     return(
     <div>
@@ -39,7 +44,7 @@ export default function Collection({products}){
                 // <li key={index}>{JSON.stringify(item)}</li>    
                 <div key={`${item['Stock #']}__tableRow`}>
                     <div>
-                        <Image src={item['Image']} width={50} height={50} />
+                        <Image src={splitAfterDotCom(item['Image'])} width={50} height={50} />
                     </div>
                     <div>{item['Stock #']}</div>
                     <div>{item['Brand']}</div>
