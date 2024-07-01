@@ -42,26 +42,23 @@ export default function Collection({products}){
             <table> 
                 <thead>
                     <tr>
-                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Image</th>
-                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Stock #</th>
-                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Brand</th>
-                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Model</th>
-                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Size / P. Line</th>
-                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Serial No.</th>
-                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Dial</th>
-                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Strap/Bracelet</th>
-                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Metal type</th>
-                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Bezel</th>
-                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Diamond</th>
-                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Case</th>
-                        {/* <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Box</th> */}
-                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Papers</th>
-                        {/* <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Card</th> */}
-                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Screws</th>
-                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Year</th>
-                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Wholesale Price</th>
-                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Retail Price</th>
-                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Status</th>
+                        <th className={"styled-cell"}>Image</th>
+                        <th className={"styled-cell"}>Stock #</th>
+                        <th className={"styled-cell"}>Brand</th>
+                        <th className={"styled-cell"}>Model</th>
+                        <th className={"styled-cell"}>Size / P. Line</th>
+                        <th className={"styled-cell"}>Serial No.</th>
+                        <th className={"styled-cell"}>Bezel</th>
+                        <th className={"styled-cell"}>Case</th>
+                        <th className={"styled-cell"}>Dial</th>
+                        <th className={"styled-cell"}>Strap/Bracelet</th>
+                        <th className={"styled-cell"}>Diamond</th>
+                        <th className={"styled-cell"}>Metal type</th>
+                        <th className={"styled-cell"}>Papers / Card</th>
+                        <th className={"styled-cell"}>Screws</th>
+                        <th className={"styled-cell"}>Year</th>
+                        <th className={"styled-cell"}>Selling Price</th>
+                        {/* <th className={"styled-cell"}>Status</th> */}
 
                         {/* 
                         <th>Links</th>
@@ -94,11 +91,11 @@ export default function Collection({products}){
 
                     <td className="styled-cell">{item['Year']}</td>
                     <td className="styled-cell">${item['Selling Price']}</td>
-                    <td className="styled-cell">{item.status='true'? 'Available' : 'Sold'}</td>
-                    <td className="styled-cell">
+                    {/* <td className="styled-cell">{item.status='true'? 'Available' : 'Sold'}</td> */}
+                    {/* <td className="styled-cell">
                         <a>Click for Images</a> <br/>
                         <a>Click for Videos</a>
-                    </td>
+                    </td> */}
                 </tr>
             ))}</table>
         </div>
