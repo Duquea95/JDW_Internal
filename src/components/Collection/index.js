@@ -1,29 +1,71 @@
 "use client"
 import { useEffect, useState } from "react";
-import { getProducts } from "../../../services/productServices";
 import Image from "next/image";
 import { formatNumberWithCommas } from "../../../lib/hooks";
 
 export default function Collection({}){
     const [data, setData] = useState([]);
     const [error, setError] = useState(null);
+    const [filteredData, setFilteredData] = useState([]);
+    const [brandFilter, setBrandFilter] = useState("");
+    const [sortOption, setSortOption] = useState("");
+    const [brands, setBrands] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
-          try {
-            const response = await fetch('https://jdw-api-e99ec4f472ac.herokuapp.com/csv-data'); // replace with your Heroku app URL
-            if (!response.ok) {
-              throw new Error('Network response was not ok');
+            try {
+              const response = await fetch(
+                "https://jdw-api-e99ec4f472ac.herokuapp.com/csv-data"
+              ); // replace with your Heroku app URL
+              if (!response.ok) {
+                throw new Error("Network response was not ok");
+              }
+              const result = await response.json();
+              setData(result);
+              setFilteredData(result);
+              // Extract unique brands
+              const uniqueBrands = [...new Set(result.map((item) => item["Brand"]))];
+              setBrands(uniqueBrands);
+            } catch (error) {
+              setError(error.message);
             }
-            const result = await response.json();
-            setData(result);
-          } catch (error) {
-            setError(error.message);
-          }
         };
-    
+      
         fetchData();
       }, []);
+
+      useEffect(() => {
+        let filtered = [...data];
+    
+        // Filter by brand
+        if (brandFilter) {
+          filtered = filtered.filter(
+            (item) => item["Brand"].toLowerCase() === brandFilter.toLowerCase()
+          );
+        }
+    
+        // Sort data
+        if (sortOption) {
+          if (sortOption === "alphabetically") {
+            filtered.sort((a, b) => a["Brand"].localeCompare(b["Brand"]));
+          } else if (sortOption === "price-asc") {
+            filtered.sort(
+              (a, b) =>
+                parseFloat(a["Selling Price"].replace(/,/g, "")) -
+                parseFloat(b["Selling Price"].replace(/,/g, ""))
+            );
+          } else if (sortOption === "price-desc") {
+            filtered.sort(
+              (a, b) =>
+                parseFloat(b["Selling Price"].replace(/,/g, "")) -
+                parseFloat(a["Selling Price"].replace(/,/g, ""))
+            );
+          }
+        }
+    
+        setFilteredData(filtered);
+      }, [brandFilter, sortOption, data]);
+    
 
       if (error) {
         return <div>Error: {error}</div>;
@@ -34,6 +76,21 @@ export default function Collection({}){
     return(
     <div>
         <div>
+            <div>
+                <label>
+                Sort by:
+                <select
+                    value={sortOption}
+                    onChange={(e) => setSortOption(e.target.value)}
+                >
+                    <option value="">Default</option>
+                    <option value="brand">Brand</option>
+                    <option value="alphabetically">Alphabetically</option>
+                    <option value="price-asc">Price: Low to High</option>
+                    <option value="price-desc">Price: High to Low</option>
+                </select>
+            </label>
+            </div>
             <table> 
                 <thead>
                     <tr>
