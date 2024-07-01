@@ -60,8 +60,9 @@ body {
   text-align: center;
 }
 th.styled-cell{
-  background-color: #00ffff;
+  background-color: black;
   border-bottom: none;
+  color: white;
 }
 
 @layer utilities {
