@@ -49,6 +49,11 @@ body {
   text-decoration: underline;
 }
 
+th.styled-cell{
+  background-color: #00ffff;
+  border: 1px solid black;
+}
+
 .styled-cell{
   /* display: inline;
   min-width: 125px;
