@@ -35,38 +35,36 @@ export default function Collection({products}){
         <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
 
         <ul>
-            <table>
-                <tbody> {data.map((item, index) => (
-                    // <li key={index}>{JSON.stringify(item)}</li>    
-                    <tr key={`${item['Stock #']}__tableRow`}>
-                        <td>
-                            <Image src={item['Image']} width={50} height={50} />
-                        </td>
-                        <td>{item['Stock #']}</td>
-                        <td>{item['Brand']}</td>
-                        <td>{item['Model']}</td>
-                        <td>{item['Size/P. Line']}</td>
-                        <td>{item['Plain / Dia.']}</td>
-                        <td>{item['Serial No.']}</td>
-                        <td>{item['Bezel']}</td>
-                        <td>{item['Case']}</td>
-                        <td>{item['Dial']}</td>
-                        <td>{item['Strap/Bracelet']}</td>
-                        <td>{item['Diamond']}</td>
-                        <td>{item['Metal type']}</td>
-                        <td>{item['Box/Papers']} / {item['Card']}</td>
-                        <td>{item['Screws']}</td>
+            <div> {data.map((item, index) => (
+                // <li key={index}>{JSON.stringify(item)}</li>    
+                <div key={`${item['Stock #']}__tableRow`}>
+                    <div>
+                        <Image src={item['Image']} width={50} height={50} />
+                    </div>
+                    <div>{item['Stock #']}</div>
+                    <div>{item['Brand']}</div>
+                    <div>{item['Model']}</div>
+                    <div>{item['Size/P. Line']}</div>
+                    <div>{item['Plain / Dia.']}</div>
+                    <div>{item['Serial No.']}</div>
+                    <div>{item['Bezel']}</div>
+                    <div>{item['Case']}</div>
+                    <div>{item['Dial']}</div>
+                    <div>{item['Strap/Bracelet']}</div>
+                    <div>{item['Diamond']}</div>
+                    <div>{item['Metal type']}</div>
+                    <div>{item['Box/Papers']} / {item['Card']}</div>
+                    <div>{item['Screws']}</div>
 
-                        <td>{item['Year']}</td>
-                        <td>${item['Selling Price']}</td>
-                        <td>{item.status='true'? 'Available' : 'Sold'}</td>
-                        <td>
-                            <a>Click for Images</a> <br/>
-                            <a>Click for Videos</a>
-                        </td>
-                    </tr>
-                ))}</tbody>
-            </table>
+                    <div>{item['Year']}</div>
+                    <div>${item['Selling Price']}</div>
+                    <div>{item.status='true'? 'Available' : 'Sold'}</div>
+                    <div>
+                        <a>Click for Images</a> <br/>
+                        <a>Click for Videos</a>
+                    </div>
+                </div>
+            ))}</div>
             </ul>
         </div>
     </div>        
