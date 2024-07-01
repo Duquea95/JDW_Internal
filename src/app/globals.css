@@ -57,6 +57,7 @@ body {
   max-height: 150px;
   max-width: 150px;
   border: 1px solid black;
+  text-align: center;
 }
 th.styled-cell{
   background-color: #00ffff;

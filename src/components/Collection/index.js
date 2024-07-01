@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { getProducts } from "../../../services/productServices";
 import Image from "next/image";
+import { formatNumberWithCommas } from "../../../lib/hooks";
 
 export default function Collection({products}){
     const [data, setData] = useState([]);
@@ -91,7 +92,7 @@ export default function Collection({products}){
                     <td className="styled-cell">{item['Screws']}</td>
 
                     <td className="styled-cell">{item['Year']}</td>
-                    <td className="styled-cell">${item['Selling Price']}</td>
+                    <td className="styled-cell">${formatNumberWithCommas(item['Selling Price'])}</td>
                     {/* <td className="styled-cell">{item.status='true'? 'Available' : 'Sold'}</td> */}
                     {/* <td className="styled-cell">
                         <a>Click for Images</a> <br/>
