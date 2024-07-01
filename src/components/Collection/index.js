@@ -60,7 +60,7 @@ export default function Collection({products}){
                         <th className={"styled-cell"}>Screws</th>
                         <th className={"styled-cell"}>Year</th>
                         <th className={"styled-cell"}>Selling Price</th>
-                        {/* <th className={"styled-cell"}>Status</th> */}
+                        <th className={"styled-cell"}>Hi-Res Content</th>
 
                         {/* 
                         <th>Links</th>
@@ -94,10 +94,10 @@ export default function Collection({products}){
                     <td className="styled-cell">{item['Year']}</td>
                     <td className="styled-cell">${formatNumberWithCommas(item['Selling Price'])}</td>
                     {/* <td className="styled-cell">{item.status='true'? 'Available' : 'Sold'}</td> */}
-                    {/* <td className="styled-cell">
+                    <td className="styled-cell">
                         <a>Click for Images</a> <br/>
                         <a>Click for Videos</a>
-                    </td> */}
+                    </td> 
                 </tr>
             ))}</table>
         </div>
