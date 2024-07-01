@@ -12,8 +12,8 @@ export default async function Home() {
   return (
     <main>
       <div>
-        <Image src={Logo.src} width={150} height={150}/>
-        <span>Welcome To JD Watch</span>
+        <Image src={Logo.src} width={150} height={150} style={{margin: 0 'auto'}}/>
+        {/* <span>Welcome To JD Watch</span> */}
       </div>
 
       {/* <Button /> */}
