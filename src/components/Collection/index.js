@@ -38,10 +38,8 @@ export default function Collection({products}){
 
     return(
     <div>
-        <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
-
-        <ul>
-            <tabl> {data.map((item, index) => (
+        <div>
+            <table> {data.map((item, index) => (
                 // <li key={index}>{JSON.stringify(item)}</li>    
                 <tr key={`${item['Stock #']}__tableRow`}>
                     <td className="styled-cell">
@@ -71,8 +69,7 @@ export default function Collection({products}){
                         <a>Click for Videos</a>
                     </td>
                 </tr>
-            ))}</tabl>
-            </ul>
+            ))}</table>
         </div>
     </div>        
 )}

@@ -50,10 +50,10 @@ body {
 }
 
 .styled-cell{
-  display: inline;
+  /* display: inline;
   min-width: 125px;
   max-width: 150px;
-  width: 100%;
+  width: 100%; */
   padding: 24px 32px;
 }
 
