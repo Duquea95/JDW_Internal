@@ -39,7 +39,38 @@ export default function Collection({products}){
     return(
     <div>
         <div>
-            <table> {data.map((item, index) => (
+            <table> 
+                <thead>
+                    <tr>
+                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Image</th>
+                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Stock #</th>
+                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Brand</th>
+                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Model</th>
+                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Size / P. Line</th>
+                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Serial No.</th>
+                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Dial</th>
+                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Strap/Bracelet</th>
+                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Metal type</th>
+                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Bezel</th>
+                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Diamond</th>
+                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Case</th>
+                        {/* <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Box</th> */}
+                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Papers</th>
+                        {/* <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Card</th> */}
+                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Screws</th>
+                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Year</th>
+                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Wholesale Price</th>
+                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Retail Price</th>
+                        <th style={{maxWidth: 200, minWidth: 150, width: '100%'}}>Status</th>
+
+                        {/* 
+                        <th>Links</th>
+                        <th>Box</th>
+                        <th>Notes</th>
+                        <th>Assets</th> */}
+                    </tr>
+                </thead>
+                {data.map((item, index) => (
                 // <li key={index}>{JSON.stringify(item)}</li>    
                 <tr key={`${item['Stock #']}__tableRow`}>
                     <td className="styled-cell">
