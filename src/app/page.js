@@ -1,3 +1,4 @@
+"use server"
 import CSVReader from "../components/CSVReader";
 import Collection from "../components/Collection";
 import { deleteProducts, getProducts } from "../../services/productServices";

@@ -27,6 +27,8 @@ export default function Collection({products}){
         return <div>Error: {error}</div>;
     }
 
+    console.log(data)
+
     return(
     <div>
         <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
