@@ -77,14 +77,26 @@ export default function Collection({}){
     <div>
         <div>
             <div>
+                <label> Filter by brand:
+                <select
+                    value={brandFilter}
+                    onChange={(e) => setBrandFilter(e.target.value)}
+                >
+                    <option value="">All Brands</option>
+                    {brands.map((brand) => (
+                    <option key={brand} value={brand}>
+                        {brand}
+                    </option>
+                    ))}
+                </select>
+                </label>
                 <label>
                 Sort by:
                 <select
                     value={sortOption}
                     onChange={(e) => setSortOption(e.target.value)}
                 >
-                    <option value="">Default</option>
-                    <option value="brand">Brand</option>
+                    <option value="">None</option>
                     <option value="alphabetically">Alphabetically</option>
                     <option value="price-asc">Price: Low to High</option>
                     <option value="price-desc">Price: High to Low</option>
@@ -120,7 +132,7 @@ export default function Collection({}){
                         <th>Assets</th> */}
                     </tr>
                 </thead>
-                {data.map((item, index) => (
+                {filteredData.map((item, index) => (
                 // <li key={index}>{JSON.stringify(item)}</li>    
                 <tr key={`${item['Stock #']}__tableRow`}>
                     <td className="styled-cell">
