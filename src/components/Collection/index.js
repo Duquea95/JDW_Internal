@@ -1,6 +1,7 @@
 "use client"
 import { useEffect, useState } from "react";
 import { getProducts } from "../../../services/productServices";
+import Image from "next/image";
 
 export default function Collection({products}){
     const [data, setData] = useState([]);
@@ -34,9 +35,38 @@ export default function Collection({products}){
         <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
 
         <ul>
-            {data.map((item, index) => (
-                <li key={index}>{JSON.stringify(item)}</li>
-            ))}
+            <table>
+                <tbody> {data.map((item, index) => (
+                    // <li key={index}>{JSON.stringify(item)}</li>    
+                    <tr key={`${item['Stock #']}__tableRow`}>
+                        <td>
+                            <Image src={item['Image']} width={50} height={50} />
+                        </td>
+                        <td>{item['Stock #']}</td>
+                        <td>{item['Brand']}</td>
+                        <td>{item['Model']}</td>
+                        <td>{item['Size/P. Line']}</td>
+                        <td>{item['Plain / Dia.']}</td>
+                        <td>{item['Serial No.']}</td>
+                        <td>{item['Bezel']}</td>
+                        <td>{item['Case']}</td>
+                        <td>{item['Dial']}</td>
+                        <td>{item['Strap/Bracelet']}</td>
+                        <td>{item['Diamond']}</td>
+                        <td>{item['Metal type']}</td>
+                        <td>{item['Box/Papers']} / {item['Card']}</td>
+                        <td>{item['Screws']}</td>
+
+                        <td>{item['Year']}</td>
+                        <td>${item['Selling Price']}</td>
+                        <td>{item.status='true'? 'Available' : 'Sold'}</td>
+                        <td>
+                            <a>Click for Images</a> <br/>
+                            <a>Click for Videos</a>
+                        </td>
+                    </tr>
+                ))}</tbody>
+            </table>
             </ul>
         </div>
     </div>        
@@ -75,7 +105,7 @@ export default function Collection({products}){
             //     <tbody>
             //         {products.map((product) => {return(
             //             <tr key={`${product._id}__tableRow`}>
-            //                 <td>image</td>
+            // <td>image</td>
             //                 <td>{product.stockNumber}</td>
             //                 <td>{product.brand}</td>
             //                 <td>{product.reference}</td>
