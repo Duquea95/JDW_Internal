@@ -34,6 +34,7 @@ export default function Collection({products}){
         const partAfterDotCom = url.substring(index);
         return partAfterDotCom;
     }
+    console.log(data)
 
     return(
     <div>
@@ -45,6 +46,7 @@ export default function Collection({products}){
                 <div key={`${item['Stock #']}__tableRow`}>
                     <div>
                         <Image src={splitAfterDotCom(item['Image'])} width={50} height={50} />
+                        <Image src={item['Image']} width={50} height={50} />
                     </div>
                     <div>{item['Stock #']}</div>
                     <div>{item['Brand']}</div>
