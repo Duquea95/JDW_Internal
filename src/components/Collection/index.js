@@ -28,12 +28,12 @@ export default function Collection({products}){
         return <div>Error: {error}</div>;
     }
 
-    function splitAfterDotCom(url) {
-        const splitString = '.com';
-        const index = url.indexOf(splitString) + splitString.length;
-        const partAfterDotCom = url.substring(index);
-        return partAfterDotCom;
-    }
+    // function splitAfterDotCom(url) {
+    //     const splitString = '.com';
+    //     const index = url.indexOf(splitString) + splitString.length;
+    //     const partAfterDotCom = url.substring(index);
+    //     return partAfterDotCom;
+    // }
     console.log(data)
 
     return(
@@ -44,29 +44,29 @@ export default function Collection({products}){
             <div> {data.map((item, index) => (
                 // <li key={index}>{JSON.stringify(item)}</li>    
                 <div key={`${item['Stock #']}__tableRow`}>
-                    <div>
-                        <Image src={splitAfterDotCom(item['Image'])} width={50} height={50} />
-                        <Image src={item['Image']} width={50} height={50} />
+                    <div className="styled-cell">
+                        {/* <Image src={splitAfterDotCom(item['Image'])} width={50} height={50} /> */}
+                        <Image src={item['Image']} width={150} height={50} />
                     </div>
-                    <div>{item['Stock #']}</div>
-                    <div>{item['Brand']}</div>
-                    <div>{item['Model']}</div>
-                    <div>{item['Size/P. Line']}</div>
-                    <div>{item['Plain / Dia.']}</div>
-                    <div>{item['Serial No.']}</div>
-                    <div>{item['Bezel']}</div>
-                    <div>{item['Case']}</div>
-                    <div>{item['Dial']}</div>
-                    <div>{item['Strap/Bracelet']}</div>
-                    <div>{item['Diamond']}</div>
-                    <div>{item['Metal type']}</div>
-                    <div>{item['Box/Papers']} / {item['Card']}</div>
-                    <div>{item['Screws']}</div>
+                    <div className="styled-cell">{item['Stock #']}</div>
+                    <div className="styled-cell">{item['Brand']}</div>
+                    <div className="styled-cell">{item['Model']}</div>
+                    <div className="styled-cell">{item['Size/P. Line']}</div>
+                    <div className="styled-cell">{item['Plain / Dia.']}</div>
+                    <div className="styled-cell">{item['Serial No.']}</div>
+                    <div className="styled-cell">{item['Bezel']}</div>
+                    <div className="styled-cell">{item['Case']}</div>
+                    <div className="styled-cell">{item['Dial']}</div>
+                    <div className="styled-cell">{item['Strap/Bracelet']}</div>
+                    <div className="styled-cell">{item['Diamond']}</div>
+                    <div className="styled-cell">{item['Metal type']}</div>
+                    <div className="styled-cell">{item['Box/Papers']} / {item['Card']}</div>
+                    <div className="styled-cell">{item['Screws']}</div>
 
-                    <div>{item['Year']}</div>
-                    <div>${item['Selling Price']}</div>
-                    <div>{item.status='true'? 'Available' : 'Sold'}</div>
-                    <div>
+                    <div className="styled-cell">{item['Year']}</div>
+                    <div className="styled-cell">${item['Selling Price']}</div>
+                    <div className="styled-cell">{item.status='true'? 'Available' : 'Sold'}</div>
+                    <div className="styled-cell">
                         <a>Click for Images</a> <br/>
                         <a>Click for Videos</a>
                     </div>

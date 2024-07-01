@@ -49,6 +49,14 @@ body {
   text-decoration: underline;
 }
 
+.styled-cell{
+  display: inline;
+  min-width: 125px;
+  max-width: 150px;
+  width: 100%;
+  padding: 24px 32px;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
