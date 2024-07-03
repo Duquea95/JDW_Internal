@@ -59,11 +59,63 @@ body {
   border: 1px solid black;
   text-align: center;
   word-wrap: break-word;
+  overflow: hidden;
+}
+td.styled-cell{
+  /* height: 175px;
+  width: 175;px; */
 }
 th.styled-cell{
   background-color: black;
   border-bottom: none;
   color: white;
+}
+
+table img{
+  rotate: 90deg;
+  padding: 16px 0;
+}
+table::-webkit-scrollbar{
+  display: none;
+}
+
+select, input{
+  border: 1px solid black;
+  margin-right: 12px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.overlay-content {
+  position: relative;
+  width: 80%;
+  height: 80%;
+  background: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px 20px;
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
 @layer utilities {
