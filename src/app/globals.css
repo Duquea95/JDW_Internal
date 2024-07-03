@@ -58,6 +58,7 @@ body {
   max-width: 150px;
   border: 1px solid black;
   text-align: center;
+  word-wrap: break-word;
 }
 th.styled-cell{
   background-color: black;

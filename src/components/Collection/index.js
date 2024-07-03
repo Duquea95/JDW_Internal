@@ -10,6 +10,7 @@ export default function Collection({}){
     const [brandFilter, setBrandFilter] = useState("");
     const [sortOption, setSortOption] = useState("");
     const [brands, setBrands] = useState([]);
+    const [searchQuery, setSearchQuery] = useState("");
 
     useEffect(() => {
         const fetchData = async () => {
@@ -43,6 +44,15 @@ export default function Collection({}){
             (item) => item["Brand"].toLowerCase() === brandFilter.toLowerCase()
           );
         }
+
+        // Filter by search query
+        if (searchQuery) {
+            filtered = filtered.filter((item) =>
+            Object.values(item).some((value) =>
+                value.toLowerCase().includes(searchQuery.toLowerCase())
+            )
+            );
+        }
     
         // Sort data
         if (sortOption) {
@@ -64,7 +74,7 @@ export default function Collection({}){
         }
     
         setFilteredData(filtered);
-      }, [brandFilter, sortOption, data]);
+      }, [brandFilter, sortOption, searchQuery, data]);
     
 
       if (error) {
@@ -78,29 +88,36 @@ export default function Collection({}){
         <div>
             <div>
                 <label> Filter by brand:
-                <select
-                    value={brandFilter}
-                    onChange={(e) => setBrandFilter(e.target.value)}
-                >
-                    <option value="">All Brands</option>
-                    {brands.map((brand) => (
-                    <option key={brand} value={brand}>
-                        {brand}
-                    </option>
-                    ))}
-                </select>
+                    <select
+                        value={brandFilter}
+                        onChange={(e) => setBrandFilter(e.target.value)}
+                    >
+                        <option value="">All Brands</option>
+                        {brands.map((brand) => (
+                        <option key={brand} value={brand}>
+                            {brand}
+                        </option>
+                        ))}
+                    </select>
                 </label>
-                <label>
-                Sort by:
-                <select
-                    value={sortOption}
-                    onChange={(e) => setSortOption(e.target.value)}
-                >
-                    <option value="">None</option>
-                    <option value="alphabetically">Alphabetically</option>
-                    <option value="price-asc">Price: Low to High</option>
-                    <option value="price-desc">Price: High to Low</option>
-                </select>
+                
+                <label> Sort by:
+                    <select
+                        value={sortOption}
+                        onChange={(e) => setSortOption(e.target.value)}
+                    >
+                        <option value="">None</option>
+                        <option value="alphabetically">Alphabetically</option>
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                    </select>
+                </label>
+                <label>Search:
+                    <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    />
             </label>
             </div>
             <table> 
@@ -110,8 +127,8 @@ export default function Collection({}){
                         <th className={"styled-cell"}>Stock #</th>
                         <th className={"styled-cell"}>Brand</th>
                         <th className={"styled-cell"}>Model</th>
-                        <th className={"styled-cell"}>Size / P. Line</th>
-                        <th className={"styled-cell"}>Plain / Diamond</th>
+                        {/* <th className={"styled-cell"}>Size / P. Line</th> */}
+                        {/* <th className={"styled-cell"}>Plain / Diamond</th> */}
                         <th className={"styled-cell"}>Serial No.</th>
                         <th className={"styled-cell"}>Bezel</th>
                         <th className={"styled-cell"}>Case</th>
@@ -142,8 +159,8 @@ export default function Collection({}){
                     <td className="styled-cell">{item['Stock #']}</td>
                     <td className="styled-cell">{item['Brand']}</td>
                     <td className="styled-cell">{item['Model']}</td>
-                    <td className="styled-cell">{item['Size/P. Line']}</td>
-                    <td className="styled-cell">{item['Plain / Dia.']}</td>
+                    {/* <td className="styled-cell">{item['Size/P. Line']}</td> */}
+                    {/* <td className="styled-cell">{item['Plain / Dia.']}</td> */}
                     <td className="styled-cell">{item['Serial No.']}</td>
                     <td className="styled-cell">{item['Bezel']}</td>
                     <td className="styled-cell">{item['Case']}</td>
